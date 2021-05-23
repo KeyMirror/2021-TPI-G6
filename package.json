@@ -1,0 +1,18 @@
+{
+  "name": "2021-tpi-g6",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "migrate": "npx sequelize db:migrate --url 'mysql://BKGXpXky5u:Z6ZCTEcgMI@remotemysql.com/BKGXpXky5u'"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "morgan": "~1.9.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.2",
+    "sequelize-cli": "^6.2.0"
+  }
+}

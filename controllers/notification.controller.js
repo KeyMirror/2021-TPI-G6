@@ -10,15 +10,14 @@ const daysController = async (req, res) => {
     try {
         const reportes = await ministryService.getById(cuit); 
         let day = ""; 
-        console.log(reportes); 
-        for (let i ; i < reportes["data"].length; i++){
-            day = reportes[i]["date_upload"].split("T");
-            day = (day[0].split("-")[2]);
+        console.log(reportes["data"][0]); 
+        for (let i = 0 ; i < reportes["data"].length; i++){
+            day = (reportes["data"][i]["date_upload"].split("-")[2]);
             day = parseInt(day); 
-            if (day > reportes[i]["day_limit"]){
+            if (day > reportes["data"][i]["day_limit"]){
                 const notification = {
                     status: true, 
-                    cuit: cuit
+                    cuit: parseInt(cuit)
                 }
 
                 const notificationCreated = await Notification.create(notification); 

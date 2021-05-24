@@ -6,7 +6,7 @@ const getById = (cuit) => {
     const data = [];
     for (let i = 0 ; i < dataSet.length; i++){
 
-        if (dataSet[i]["infoEmpresa"][0]["cuit"] === parseInt(cuit)){ 
+        if (dataSet[i]["infoEmpresa"]["cuit"] === parseInt(cuit)){ 
             data.push(dataSet[i]);
         } 
         

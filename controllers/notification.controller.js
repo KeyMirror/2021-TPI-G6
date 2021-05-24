@@ -15,11 +15,11 @@ const daysController = async (req, res) => {
         }
 
         for (let i = 0 ; i < reportes["data"].length; i++){
-            let {notification, alert} = daysChecker(resportes["data"][i], fields); 
+            let {notification, alert} = await daysChecker(reportes["data"][i], fields); 
 
-            if (notification.status){
+            if (notification["status"]){
                 data["alert"].push(alert); 
-                data["status"] = notification.status; 
+                data["status"] = notification["status"]; 
             }
         }
 

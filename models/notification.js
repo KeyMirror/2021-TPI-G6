@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
   };
   Notification.init({
     status: DataTypes.BOOLEAN,
-    cuit: DataTypes.BIGINT,
+    cuit: DataTypes.BIGINT(11),
   }, {
     sequelize,
     modelName: 'Notification',

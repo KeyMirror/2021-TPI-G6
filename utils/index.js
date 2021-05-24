@@ -1,4 +1,5 @@
 module.exports = {
     Response: require('./Response'),
-    daysChecker: require('./daysChecker.js')
+    daysChecker: require('./daysChecker'),
+    dataSet: require('./mockUp/dataSet'),
 }

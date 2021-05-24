@@ -1,6 +1,6 @@
 //const axios = require('axios')
 
-const dataSet = require('../utils/mockUp/dataSet')
+const dataSet = require('../utils')
 
 const getById = (cuit) => {
     const data = [];

@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www",
     "migrate": "npx sequelize db:migrate --url 'mysql://BKGXpXky5u:Z6ZCTEcgMI@remotemysql.com/BKGXpXky5u'"
   },
   "dependencies": {
@@ -14,5 +15,8 @@
     "mysql2": "^2.2.5",
     "sequelize": "^6.6.2",
     "sequelize-cli": "^6.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   }
 }

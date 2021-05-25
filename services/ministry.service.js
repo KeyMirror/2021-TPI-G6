@@ -1,16 +1,17 @@
 //const axios = require('axios')
 
-const dataSet = require('../utils')
+const { dataSet } = require('../utils')
 
 const getById = (cuit) => {
     const data = [];
-    for (let i = 0 ; i < dataSet.length; i++){
+    for (i in dataSet){
 
         if (dataSet[i]["infoEmpresa"]["cuit"] === parseInt(cuit)){ 
             data.push(dataSet[i]);
         } 
-        
     }
+
+    console.log(data);
 
     return {data};
 }

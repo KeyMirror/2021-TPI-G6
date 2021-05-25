@@ -1,21 +1,23 @@
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-const notificationRouter = require('./routes/notification.routes'); 
+// express app
+const app = express();
 
-var app = express();
+// routes
+const indexRouter = require('./routes/index');
+const notificationsRouter = require('./routes/notifications.routes'); 
 
+// uses routes
+app.use('/', indexRouter);
+app.use('/notifications', notificationsRouter);
+
+// uses modules
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/nofication', notificationRouter); 
 
 module.exports = app;

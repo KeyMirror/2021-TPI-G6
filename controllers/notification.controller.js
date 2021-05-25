@@ -1,17 +1,17 @@
 const { ministryService } = require('../services'); 
 const { Response } = require('../utils/'); 
+const db = require('../models');
+const Notification = require('../models/notification')(db.sequelize, db.Sequelize);
 const { daysChecker } = require('../utils'); 
 
 const daysController = async (req, res) => {
     const { cuit } = req.params; 
 
-    console.log(cuit)
 
     try {
         let reports = ministryService.getById(cuit);
         reports = reports["data"]
 
-        console.log(reports)
         const notification = {
             status: true,
             cuit: cuit,
@@ -21,7 +21,6 @@ const daysController = async (req, res) => {
         let alerts = []
 
         for (i in reports) {
-            console.log(reports[i])
             let {alert} = await daysChecker(reports[i]); 
 
             if (alert) {

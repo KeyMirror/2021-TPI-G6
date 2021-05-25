@@ -6,6 +6,9 @@ const logger = require('morgan');
 // express app
 const app = express();
 
+// middlewares
+const { handlerNotFound } = require('./middlewares');
+
 // routes
 const indexRouter = require('./routes/index');
 const notificationsRouter = require('./routes/notifications.routes'); 
@@ -19,5 +22,8 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+// catch 404 and forward to error handler
+app.use(handlerNotFound);
 
 module.exports = app;

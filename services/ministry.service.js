@@ -3,6 +3,7 @@
 const { dataSet } = require('../utils')
 
 const getById = (cuit) => {
+    console.log("estoy en getById")
     const data = [];
     for (i in dataSet){
 

@@ -1,5 +1,7 @@
 const { ministryService } = require('../services'); 
 const { Response } = require('../utils/'); 
+const db = require('../models');
+const Notification = require('../models/notification')(db.sequelize, db.Sequelize);
 const { daysChecker } = require('../utils'); 
 
 const daysController = async (req, res) => {
@@ -7,20 +9,34 @@ const daysController = async (req, res) => {
 
 
     try {
-        const reportes = await ministryService.getById(cuit); 
-        const fields = ["date_upload", "day_limit", "infoEmpresa", "cuit"]; 
-        const data = {
-            alert: [], 
-            status: false
+        let reports = ministryService.getById(cuit);
+        reports = reports["data"]
+
+        const notification = {
+            status: true,
+            cuit: cuit,
+            message: "Se encuentra al dia",
         }
 
-        for (let i = 0 ; i < reportes["data"].length; i++){
-            let {notification, alert} = await daysChecker(reportes["data"][i], fields); 
+        let alerts = []
 
-            if (notification["status"]){
-                data["alert"].push(alert); 
-                data["status"] = notification["status"]; 
+        for (i in reports) {
+            let {alert} = await daysChecker(reports[i]); 
+
+            if (alert) {
+                alerts.push(alert); 
             }
+        }
+
+        if (alerts.length > 0) {
+            notification["status"] = false;
+            notification["message"] = "Su situacion es de incumplimiento, revise las alertas y regularice su situacion con el ministerio.";
+            await Notification.create(notification)
+        }
+
+        const data = {
+            notification: notification,
+            alerts: alerts,
         }
 
         return Response.success(res, data); 

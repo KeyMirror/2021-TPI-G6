@@ -11,7 +11,8 @@ module.exports = (sequelize, DataTypes) => {
   };
   Alert.init({
     title: DataTypes.STRING,
-    description: DataTypes.STRING
+    description: DataTypes.TEXT,
+    date: DataTypes.DATEONLY,
   }, {
     sequelize,
     modelName: 'Alert',

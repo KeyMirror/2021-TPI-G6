@@ -10,8 +10,8 @@ const app = express();
 const { handlerNotFound } = require('./middlewares');
 
 // routes
-const indexRouter = require('./routes/index');
-const notificationsRouter = require('./routes/notifications.routes'); 
+const indexRouter = require('./presentation/routes/index');
+const notificationsRouter = require('./presentation/routes/notifications.routes'); 
 
 // uses routes
 app.use('/', indexRouter);

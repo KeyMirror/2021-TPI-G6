@@ -1,11 +1,9 @@
-const db = require('../models');
-const Alert = require('../models/alert')(db.sequelize, db.Sequelize); 
+const { alertRepository } = require('../dal/repositories'); 
 
 const getName = require('./getName');
 
 const daysChecker = async (data = {}) => {
     const date = new Date(data["date_upload"]);
-
 
     let alert = null
 
@@ -17,7 +15,7 @@ const daysChecker = async (data = {}) => {
             date: date,
         }
 
-        await Alert.create(alert); 
+        await alertRepository.createAlert(alert);  
 
     }
 

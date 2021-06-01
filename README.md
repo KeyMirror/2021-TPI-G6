@@ -26,6 +26,7 @@
 
 ### Migrar los modelos
 5) correr el siguiente comando en la terminal para migrar los modelos: 
+
 ```bash
     npx sequelize db:migrate
 ```
@@ -35,6 +36,7 @@
 ```bash
     npm run start
 ```
+
 
 ## API:
 

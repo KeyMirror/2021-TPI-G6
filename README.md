@@ -1,36 +1,39 @@
 # 2021-TPI-G6
 ## Instalación:
 
-Primero clonamos el repositorio: 
+1) Clonar el repositorio: 
 ```bash
     git clone https://github.com/rln-tomas/2021-TPI-G6/
 ```
 
-Luego instalamos las dependencias: 
+
+2) Dirigirse al root del proyecto e Instalar las dependencias: 
 ```bash
     cd 2021-TPI-G6 && npm install && npm i -g sequelize sequelize-cli
 ```
-Una vez instaladas las dependencias verificamos nuestras variables de entorno en el archivo .env:
 
+3) Copiar el archivo '.env.example' en el mismo lugar renombrado como: '.env'
+
+4) Definir las constantes en: .env (reemplar los campos con los datos de su BD local)
 ```javascript
-    PORT=4000
-    DB_PASSWORD="nuestra contraseña"
-    DB_USER="nuestro nombre de usuario"
-    DB_NAME="nuestra base de datos"
-    DB_HOST="El host donde se aloja la base de datos"
-    DB_DIALECT="El dialecto: mysql, sqlserver, etc."
+    DB_USER=nombre_de_usuario
+    DB_PASSWORD=contrasenia
+    DB_NAME=nombre_base_datos
+    DB_HOST=nombre_host_bd
+    DB_PORT=puerto
+    DB_DIALECT=dialecto
 ```
 
-### Migrando los modelos
-Cuando configuramos las variables de entorno corremos el siguiente comando para migrar los modelos: 
+### Migrar los modelos
+5) correr el siguiente comando en la terminal para migrar los modelos: 
 ```bash
     npx sequelize db:migrate
 ```
 
 ## Ejecucion: 
-Corremos el siguiente comando en terminal: 
+6) correr el siguiente comando en terminal: 
 ```bash
-    npm run dev
+    npm run start
 ```
 
 ## API:

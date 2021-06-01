@@ -21,6 +21,9 @@ Una vez instaladas las dependencias verificamos nuestras variables de entorno en
     DB_DIALECT="El dialecto: mysql, sqlserver, etc."
 ```
 
+En el archivo .env.example tenemos credenciales de prueba con una base de datos remota ya migrada, con lo cual no es necesario migrar la misma antes de ejecutar la aplicación. 
+
+## En caso de usar una base de datos propia: 
 ### Migrando los modelos
 Cuando configuramos las variables de entorno corremos el siguiente comando para migrar los modelos: 
 ```bash
@@ -30,8 +33,9 @@ Cuando configuramos las variables de entorno corremos el siguiente comando para 
 ## Ejecucion: 
 Corremos el siguiente comando en terminal: 
 ```bash
-    npm run dev
+    npm run start
 ```
+
 
 ## API:
 

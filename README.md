@@ -1,16 +1,16 @@
 # 2021-TPI-G6
 ## Instalación:
 
-### Primero clonamos el repositorio: 
+Primero clonamos el repositorio: 
 ```bash
     git clone https://github.com/rln-tomas/2021-TPI-G6/
 ```
 
-### Luego instalamos las dependencias: 
+Luego instalamos las dependencias: 
 ```bash
     cd 2021-TPI-G6 && npm install
 ```
-### Una vez instaladas las dependencias verificamos nuestras variables de entorno en el archivo .env:
+Una vez instaladas las dependencias verificamos nuestras variables de entorno en el archivo .env:
 
 ```javascript
     PORT=4000
@@ -22,22 +22,20 @@
 ```
 
 ## Ejecucion: 
-### Corremos el siguiente comando en terminal: 
+Corremos el siguiente comando en terminal: 
 ```bash
     npm run dev
 ```
 
-## API: 
-
-### Puede verificar el estado de su compañia realizando la siguiente request:
+## API:
 
 ### Nuestro grupo hace uso de REST Client, así como de Postman para las consultas. 
-### En caso de utilizar REST Client basta con copiar el siguiente texto en "request.rest": 
+En caso de utilizar REST Client basta con copiar el siguiente texto en "request.rest": 
 
 ```http
     GET http://localhost:4000/notifications/{cuit}
 ```
-### La response esperada para ese endpoint es del siguiente tipo: (Ejemplo) 
+La response esperada para ese endpoint es del siguiente tipo: (Ejemplo) 
 ```json 
     {
         "ok": true,

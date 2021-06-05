@@ -22,7 +22,7 @@ const statusQuery = async (req, res) => {
         if (reports.length === 0){
             return Response.success(
                 res,
-                message = 'cuit sin reportes presentados',
+                message = 'no se encontraron datos para el cuit ingresado',
                 status = 400
             )
         }

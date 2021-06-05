@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const { notificationController } = require('../controllers'); 
+const { notificationsController } = require('../controllers'); 
 
-router.get('/:cuit', notificationController.daysController); 
+router.get('/:cuit', notificationsController.statusQuery);
 
 module.exports = router; 

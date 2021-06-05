@@ -13,11 +13,13 @@ const { handlerNotFound } = require('./middlewares');
 
 // routes
 const indexRouter = require('./presentation/routes/index');
-const notificationsRouter = require('./presentation/routes/notifications.routes'); 
+const notificationsRouter = require('./presentation/routes/notifications.routes');
+const reportsRouter = require('./presentation/routes/reports.routes')
 
 // uses routes
 app.use('/', indexRouter);
 app.use('/notifications', notificationsRouter);
+app.use('/reports', reportsRouter);
 
 // uses modules
 app.use(logger('dev'));

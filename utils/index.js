@@ -3,4 +3,5 @@ module.exports = {
     daysChecker: require('./daysChecker'),
     getName: require('./getName'), 
     dataSet: require('./mockUp/dataSet'),
+    cuitValidator: require('./cuitValidator'),
 }

@@ -1,3 +1,4 @@
 module.exports = {
-    notificationController: require('./notification.controller')
+    notificationsController: require('./notifications.controller'),
+    reportsController: require('./reports.controller'),
 }

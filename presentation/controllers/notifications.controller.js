@@ -5,7 +5,7 @@ const { daysChecker, cuitValidator } = require('../../utils');
 
 const statusQuery = async (req, res) => {
     const { cuit } = req.params;
-
+    
     if (! cuitValidator(cuit)) {
         return Response.error(
             res,
@@ -19,6 +19,14 @@ const statusQuery = async (req, res) => {
         let reports = ministryService.getById(cuit);
         reports = reports["data"]
 
+        if (reports.length === 0){
+            return Response.success(
+                res,
+                message = 'cuit sin reportes presentados',
+                status = 400
+            )
+        }
+ 
         const notification = {
             status: true,
             cuit: cuit,

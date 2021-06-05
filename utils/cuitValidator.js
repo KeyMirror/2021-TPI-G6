@@ -2,10 +2,13 @@ const cuitValidator = (cuit) =>{
 
     const acceptValues = /^[0-9]+$/;
 
-    if (! cuit.length == 10 && cuit.match(acceptValues)) {
-        return true;
+    console.log(cuit.length)
+    console.log(cuit.match(acceptValues))
+ 
+    if (cuit.length !== 11 || !cuit.match(acceptValues)) {
+        return false;
     }
-    return false;
+    return true;
 }
 
     

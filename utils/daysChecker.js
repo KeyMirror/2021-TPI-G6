@@ -4,7 +4,6 @@ const getName = require('./getName');
 
 const daysChecker = async (data = {}) => {
     const date = new Date(data["date_upload"]);
-    console.log(date.getUTCDate()); 
     let alert = null
 
     if (data["day_limit"] < date.getUTCDate()) {

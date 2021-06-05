@@ -1,4 +1,4 @@
-const chalk = require('chalk');
+//const chalk = require('chalk');
 
 class Response {
 	static success(res, data = {}, status = 200) {
@@ -14,7 +14,7 @@ class Response {
 			if (err instanceof Object || Array.isArray(err)) {
 				console.log(err);
 			} else {
-				console.log(chalk.red(`[Response Error]: ${err}`));
+				console.log(`[Response Error]: ${err}`);
 			}
 		}
 

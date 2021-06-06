@@ -4,4 +4,5 @@ module.exports = {
     getName: require('./getName'), 
     dataSet: require('./mockUp/dataSet'),
     cuitValidator: require('./cuitValidator'),
+    prevMonth: require('./prevMonth')
 }

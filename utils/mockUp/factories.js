@@ -1,4 +1,6 @@
 const random = require('random');
+const prevMonth = require('../prevMonth');
+
 
 const companyNameSet = [
     'La amistad',
@@ -149,7 +151,7 @@ const days = ['01','02','03','04','05','06','07','08','09','10','11','01','13','
 
 const dateFactory = () => {
     
-    const year = years[0];
+    const year = years[1];
     const month = months[random.int(0,5)];
     const day = days[random.int(0,28)];
 
@@ -172,14 +174,20 @@ const reportsFactory = () => {
         for (i=0;i<=total;i++) {
             id_rep = id_rep+1;
             let date = dateFactory();
-            while (date in dates) {
+            let months = [];
+            let month = date.split('-')[1];
+            while (month in months) {
                 date = dateFactory();
+                month = date.split('-')[1];
             };
-            dates.push(date);
+            months.push(month);
+            month = (date.split('-')[1]);
+            const prev_month = prevMonth(month);
+            
             report = {
                 periodo: {
-                    year: years[0],
-                    month: months[random.int(0,5)]
+                    year: years[1],
+                    month: prev_month,
                 },
                 listaRegistro: productsFactory(),
                 date_upload: date,

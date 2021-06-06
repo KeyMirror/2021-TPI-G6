@@ -31,4 +31,9 @@ app.use(cookieParser());
 // catch 404 and forward to error handler
 app.use(handlerNotFound);
 
+// static
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
+app.set('views', __dirname + '/public')
+
 module.exports = app;

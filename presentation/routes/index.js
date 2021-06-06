@@ -1,19 +1,17 @@
 var express = require('express');
 var router = express.Router();
 
-const { Response } = require('../../utils/'); 
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  message = {
+  const data = {
     path: 'index endpoint',
     name: 'API Secretaria',
     status: 'On-line',
   }
-  const data = {
-    message,
-  }
-  Response.success(res, data)
+  
+  res.render('index')
 });
+
 
 module.exports = router;

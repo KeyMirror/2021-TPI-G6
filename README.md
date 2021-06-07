@@ -1,5 +1,12 @@
 # 2021-TPI-G6
-## Instalación:
+
+## Live on: 
+
+```bash
+https://api-secretaria-g6.herokuapp.com/
+```
+
+### Instalacion local:
 
 1) Clonar el repositorio: 
 ```bash
@@ -59,7 +66,7 @@ La response esperada para ese endpoint es del siguiente tipo: (Ejemplo)
             {
                 "title": "Incumplimiento mes: Enero",
                 "description": "Al dia de hoy se encuentra excedido 17 dias.",
-                "date": "2021-01-27T00:00:00.000Z"
+                "date": "2021-01-27"
             }
             ]
         }

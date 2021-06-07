@@ -1,5 +1,4 @@
 const { alertRepository } = require('../dal/repositories');
-const { prevMonth } = require('./mockUp/factories');
 
 const getName = require('./getName');
 

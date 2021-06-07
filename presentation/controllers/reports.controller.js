@@ -6,7 +6,12 @@ const getAllReports = async (req, res) => {
     try {
         let reports = ministryService.getAll();
         reports = reports["data"]
-        return Response.success(res, {reports}); 
+
+        const data = {
+            reports,
+        }
+
+        return Response.success(res, data); 
     }catch(errors){
         return Response.error(res, errors); 
     }
@@ -23,7 +28,11 @@ const getAllCuits = async (req, res) => {
             cuits.push(reports[idx]["infoEmpresa"]["cuit"])
         }
 
-        return Response.success(res, {cuits}); 
+        const data = {
+            cuits,
+        }
+
+        return Response.success(res, data); 
     }catch(errors){
         return Response.error(res, errors); 
     }
@@ -40,7 +49,11 @@ const getAllCompanies = async (req, res) => {
             companies.push(reports[idx]["infoEmpresa"])
         }
 
-        return Response.success(res, {companies}); 
+        const data ={
+            companies,
+        }
+
+        return Response.success(res, data); 
     }catch(errors){
         return Response.error(res, errors); 
     }
@@ -71,7 +84,11 @@ const getByCuit = async (req, res) => {
             )
         }
 
-        return Response.success(res, {reports}); 
+        const data = {
+            reports,
+        }
+
+        return Response.success(res, data); 
 
     }catch(errors){
         return Response.error(res, errors); 

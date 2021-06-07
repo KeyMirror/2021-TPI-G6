@@ -10,7 +10,7 @@ const companyNameSet = [
     'Hipermercado Libertad SA',
     'Despensa Tere',
     'El Economico',
-    'Kiosko "La Esquina"',
+    'Kiosko La Esquina',
     'Tutti Frutti',
     'Super España',
     'Telecentro Pelozo',
@@ -203,8 +203,6 @@ const reportsFactory = () => {
     }
     return reports;
 }
-
-//const reportsData = reportsFactory();
 
 
 

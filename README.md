@@ -1,12 +1,10 @@
 # 2021-TPI-G6
 
-## Live on: 
+## Version 'Live': 
 
-```bash
-https://api-secretaria-g6.herokuapp.com/
-```
+*  [https://api-secretaria-g6.herokuapp.com](https://api-secretaria-g6.herokuapp.com)
 
-### Instalacion local:
+## Instalacion local:
 
 1) Clonar el repositorio: 
 ```bash

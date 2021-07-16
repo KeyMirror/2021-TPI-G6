@@ -1,29 +1,35 @@
-//const axios = require('axios')
+const axios = require('axios')
 
-const { dataSet } = require('../utils')
 
-const getById = (cuit) => {
-    const data = [];
-    for (i in dataSet){
 
-        if (dataSet[i]["infoEmpresa"]["cuit"] === parseInt(cuit)){ 
-            data.push(dataSet[i]);
-        } 
+const base_url = "https://ministeriodesarrolloproductivo.herokuapp.com/api/"
+
+const getCompanyReports = async (jwt) => {
+
+    //axios.defaults.headers.common.token = jwt
+
+    let data = {
+        response: null,
+        error: null,
     }
-
-
-    return {data};
+    
+    try {
+        const response = await axios.get(
+            base_url + "reports", {
+            headers: {
+                "token": jwt
+            }
+            });
+        data.response = response;      
+    } catch (error) {
+        data.error = error;
+    }
+    return data;  
 }
 
-const getAll = () => {
-    const data = dataSet;
-    return {data};
-
-}
 
 module.exports = {
-    getById,
-    getAll,
+    getCompanyReports,
 }
 
 

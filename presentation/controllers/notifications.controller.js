@@ -64,7 +64,7 @@ const statusQuery = async (req, res) => {
 
 
 const getAllNotifications = async (req, res) => {
-    const notifications = notificationRepository.getAll();
+    const notifications = await notificationRepository.getAll();
 
     const data = {
         notifications

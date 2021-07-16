@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
-    "migrate": "npx sequelize db:migrate --url 'mysql://BKGXpXky5u:Z6ZCTEcgMI@remotemysql.com/BKGXpXky5u'"
+    "migrate": "npx sequelize db:migrate --url 'mysql://bff1d307e07093:83195e2a@us-cdbr-east-04.cleardb.com/heroku_d9b3b7f3bf19ba5' "
   },
   "dependencies": {
     "axios": "^0.21.1",

@@ -13,7 +13,7 @@ const createNotification = async(data) => {
 
 const getAll = async () => {
     try{
-        const notifications = await baseRepository.getAll(entity); 
+        const notifications = await baseRepository.getAllDescOrderer(entity); 
         return notifications; 
     }catch(error){
         console.log(error); 

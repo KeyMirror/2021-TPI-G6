@@ -10,6 +10,19 @@ const getAll = async (entity) => {
     }
 }
 
+const getAllDescOrderer = async (entity) => {
+        try{
+            const result = await db[entity].findAll({
+                order: [
+                    ['id', 'DESC'],
+                ],
+            }); 
+            return result; 
+        }catch(error){
+            console.log(error); 
+            return;
+}};
+
 const getByField = async (entity, toWhere) => {
     try{
         const result = await db[entity].findOne({ where: toWhere }); 
@@ -55,6 +68,7 @@ const destroy = async (entity, id) => {
 
 const baseRepository = {
     getAll,
+    getAllDescOrderer,
     getByField,
     create,
     update, 

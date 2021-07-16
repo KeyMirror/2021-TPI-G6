@@ -1,40 +1,40 @@
 const { ministryService } = require('../../services');
-const { notificationRepository } = require('../../dal/repositories'); 
-const { Response } = require('../../utils/'); 
-const { daysChecker, cuitValidator } = require('../../utils'); 
+const { notificationRepository } = require('../../dal/repositories');
+const { daysChecker, Response } = require('../../utils'); 
 
 const statusQuery = async (req, res) => {
-    const { cuit } = req.params;
     
-    if (! cuitValidator(cuit)) {
-        return Response.error(
-            res,
-            err=true, 
-            message = 'no se ingreso un cuit valido',
-            status = 400
-        )
-    }
-
+    const jwt = req.headers["authorization"];
+    
     try {
-        let reports = ministryService.getById(cuit);
-        reports = reports["data"]
+        let data = await ministryService.getCompanyReports(jwt);
 
+        if (data.error){
+            return Response.error(
+                res,
+                data.error,
+                message = 'ha ocurrido un error',
+                status = 400
+            ) 
+        }
+
+        const reports = data.response.data[0].report
+
+        
         if (reports.length === 0){
             return Response.success(
                 res,
-                message = 'no se encontraron datos para el cuit ingresado',
-                status = 400
+                message = 'no se encontraron datos registrados.'
             )
         }
  
         const notification = {
             status: true,
-            cuit: cuit,
             message: "Se encuentra al dia",
         }
 
         let alerts = []
-
+        
         for (i in reports) {
             let {alert} = await daysChecker(reports[i]); 
 
@@ -49,7 +49,8 @@ const statusQuery = async (req, res) => {
             await notificationRepository.createNotification(notification); 
         }
 
-        const data = {
+        console.log(data)
+        data = {
             notification: notification,
             alerts: alerts,
         }

@@ -7,23 +7,17 @@
 </head>
 
 <body>
-  <div class="container-fluid center">
+  <div class="container-fluid center" style="display: flex; align-items: center; margin-top: 14%; flex-direction: column;">
+  
     <div class="box">
       <h1>Secretaria API - Grupo 6 </h1>
     </div>
     <br>
     <br>
-    <div class="box">
-      <p>endpoints: todos metodos <b>GET</b></p>
-    </div>
-    <br>
     <div class="box">         
           <ul>
-            <li>https://api-secretaria-g6.herokuapp.com<b>/reports</b> --> Todos los reportes </li>
-            <li>https://api-secretaria-g6.herokuapp.com<b>/reports/company</b> --> Todas las empresas </li>
-            <li>https://api-secretaria-g6.herokuapp.com<b>/reports/cuit</b> --> Todos los cuits de empresas </li>
-            <li>https://api-secretaria-g6.herokuapp.com<b>/reports/company/:cuit</b> --> Buscar empresa por cuit </li>
-            <li>https://api-secretaria-g6.herokuapp.com<b>/notifications/:cuit</b> --> Consultar estado via cuit</li>
+            <li>https://api-secretaria-g6.herokuapp.com <b>/status</b> </li>
+            <li>...agregar en el headers: <b> "authorization": jwt </b> </li>
           </ul>
     </div>
   

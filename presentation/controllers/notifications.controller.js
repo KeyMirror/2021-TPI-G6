@@ -63,9 +63,24 @@ const statusQuery = async (req, res) => {
 }
 
 
+const getAllNotifications = async (req, res) => {
+    const notifications = notificationRepository.getAll();
+
+    const data = {
+        notifications
+    }
+
+    return Response.success(res, data);
+}
+
+
+
+
+
 
 const notificationsController = {
     statusQuery,
+    getAllNotifications,
 }
 
 module.exports = notificationsController; 

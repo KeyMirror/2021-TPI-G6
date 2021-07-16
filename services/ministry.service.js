@@ -6,8 +6,6 @@ const base_url = "https://ministeriodesarrolloproductivo.herokuapp.com/api/"
 
 const getCompanyReports = async (jwt) => {
 
-    //axios.defaults.headers.common.token = jwt
-
     let data = {
         response: null,
         error: null,

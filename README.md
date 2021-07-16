@@ -47,7 +47,11 @@
 En caso de utilizar REST Client basta con copiar el siguiente texto en "request.rest": 
 
 ```http
-    GET http://localhost:4000/notifications/{cuit}
+    GET http://localhost:4000/status
+```
+En la request, agregar en el headers: 
+```
+authorization: jwt
 ```
 La response esperada para ese endpoint es del siguiente tipo: (Ejemplo) 
 ```json 

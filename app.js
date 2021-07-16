@@ -17,7 +17,7 @@ const notificationsRouter = require('./presentation/routes/notifications.routes'
 
 // uses routes
 app.use('/', indexRouter);
-app.use('/notifications', notificationsRouter);
+app.use('/status', notificationsRouter);
 
 // uses modules
 app.use(logger('dev'));
